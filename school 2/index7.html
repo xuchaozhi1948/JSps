@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>fullPage.js — 项目导航演示_dowebok</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/animate%20(4).css">
+<style>
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+.section:first-child{
+    background: url("img/iswanto-arif-412022.jpg") no-repeat ;
+    background-size:cover;
+    background-position: center center;
+}
+.section:nth-child(2){
+    background: url("img/3.jpg") no-repeat ;
+    background-size:cover;
+    background-position: center center;
+}
+.section:nth-child(3){
+    background: url("img/artem-sapegin-229391.jpg") no-repeat ;
+    background-size:cover;
+    background-position: center center;
+}
+.section:last-child{
+    background: url("img/david-henrichs-375566.jpg") no-repeat ;
+    background-size:cover;
+    background-position: center center;
+}
+</style>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/index.js"></script>
+<script>
+$(function(){
+	$('#dowebok').fullpage({
+//		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+		'navigation': true,
+        navigationTooltips:['首页','寄语','优势','前往官网'],
+//        loopBottom:true,
+        scrollingSpeed:2000
+	});
+    $(".xl").click(function () {
+        $.fn.fullpage.moveSectionDown();
+    });
+
+});
+</script>
+</head>
+
+<body>
+
+<div id="dowebok">
+	<div class="section">
+        <div class="wz-box">
+            <img src="img/1512668174402158.png" alt="" class="logo">
+        </div>
+        <div class="igs">
+            <img src="img/1512668585354915.png" alt="" class="xx1">
+            <img src="img/1512668600942222.png" alt="" class="xx2">
+            <img src="img/1512668615125327.png" alt="" class="xx3">
+            <img src="img/1512668625742145.png" alt="" class="xx4">
+        </div>
+        <!--<p class="wz-pp">教育是什么，教育是社会良心的底线，是人类灵魂的净土，是立国之本，是强国之基。教育有啥用？教育就是帮助我们个人认知自己，帮助这个民族认知自己，我们才有可能掌握个人的命运，并且创造这个国家的未来。我们作为教育者，作为受教育者，要始终谨记，教育、读书的终极目的：为天地立心，为生民立命，为往圣继绝学，为万世开太平！</p>-->
+        <!--<p class="wz-p">教育的实质就在于使一个人努力在某件事件上表现自己，表现出自己的优点来。在某种好的东西中来认识自己——善于支持人的这种高尚的志向是多么重要啊！教育者往往在那么长久而痛苦地寻找的那种自我教育的强大推动力，不是就在这里吗？应当在心理学讨论会上提出这个问题：人的表现问题。……怎样才能做到，使人尽量地努力在好的方面表现自己呢？我深信，一个人想在某个好的方面表现自己的愿望越深刻、越诚挚，他在内心对自我纪律的有求就越高，他对自己身上不好的的东西就越加不肯妥协。</p>-->
+        <div class="xl"><img src="img/下拉%20(1).png" alt=""></div>
+
+    </div>
+	<div class="section">
+        <div class="bg21"></div>
+        <div class="bg22"></div>
+        <div class="igs2">
+            <img src="img/8.jpg" alt="" class="xx21">
+            <img src="img/88.jpg" alt="" class="xx22">
+            <img src="img/888.jpg" alt="" class="xx23">
+            <img src="img/8888.jpg" alt="" class="xx24">
+        </div>
+        <div class="wz-box2">
+            <!--<h1><a href="">师德为先 师风为本</a></h1>-->
+            <!--<h2>改革教育观念，坚持教育创新，推进素质教育</h2>-->
+        </div>
+        <p class="wz-p2"><b>厚德载物</b>——国以人为本，人以德为本。教育教学以德为首，全体师生以德为先， 我们要立志做一个品德高尚、敢于担当的人。<br>
+            <b>志存高远</b>——欲成大业者，志当存高远。我们要以坚定的信念、远大的志向为灯塔，指引人生之船驶向远方、抵达成功彼岸。<br>
+            <b>求知精技</b>——不积跬步无以至千里。我们要虚怀若谷、点滴积累、持续学习、认真钻研，做一个知识渊博、技能精湛的人。<br>
+            <b>敬业奉献</b>——爱岗敬业，乐于奉献。我们要专心致志干好自己的事业，心甘情愿奉献自己的价值，做一个对社会有用的人。</p>
+        <div class="xl"><img src="img/下拉%20(1).png" alt=""></div>
+
+    </div>
+	<div class="section">
+        <div class="bg31"></div>
+        <div class="bg32"></div>
+        <div class="bg33"></div>
+        <div class="wz-box3">
+            <h1><a href="">发展职业教育 培养实用人才</a></h1>
+            <h2>加强职业技术培训，提高就业竞争能力</h2>
+        </div>
+        <p class="wz-p3">一、国家资助：所有学生就读免学费，涉农专业学生和家庭经济困难学生前两年每年享受2000元国家助学金；<br>
+            二、对口升学：所有学生可通过对口升学考试升入省内外高等院校深造学习；<br>
+            三、推荐就业：学校与省内外多家用人单位合作，为学生提供专业实训、毕业实习、推荐就业服务；<br>
+            四、第二课堂：为了发掘每一个学生的长处和闪光点，学校结合学生个性和特长量身打造丰富多样的第二课堂，帮助学生认识自我、树立信心。<br>
+            五、合理分流：根据学生成绩和兴趣爱好，对所有学生进行“升学班”和“就业班”合理分流，让每一个学生都有人生出彩的机会。</p>
+        <div class="xl"><img src="img/下拉%20(1).png" alt=""></div>
+
+    </div>
+	<div class="section">
+        <div class="bg41"></div>
+        <div class="bg42"></div>
+        <div class="bg43"></div>
+        <div class="bgkk"></div>
+        <div class="bgkk1">点击前往</div>
+        <div class="bgkk2"></div>
+        <div class="wz-box4">
+            <h1><a href="">欢迎来到汾阳市高级职业中学官网</a></h1>
+            <h2>崇德  精技  励志  敬业</h2>
+        </div>
+
+	</div>
+
+</div>
+
+</body>
+</html>

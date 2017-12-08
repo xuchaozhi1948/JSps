@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贪吃蛇</title>
+    <style>
+        body{
+            background: url("qq.jpg")no-repeat 60% 50%;
+            -webkit-background-size: 100% ;
+            background-size: 100%;
+        }
+        .box{
+            width:800px;
+            height:800px;
+            border: 3px solid #000;
+            margin: 0 auto;
+            position: relative;
+        }
+        p{
+            display: block;
+            width:800px;
+            height:800px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box div{
+            width: 20px;
+            height:20px;
+            box-sizing: border-box;
+            /*border: 1px solid #999;*/
+            float:left;
+        }
+        .food{
+            background: url("timg.png") ;
+            -webkit-background-size: 20px 20px;
+            background-size: 20px 20px;
+        }
+        .she{
+            background: yellow;
+            border: 1px solid #999;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        input{
+            width:120px;
+            height: 30px;
+
+        }
+        main{
+            width:800px;
+            line-height: 50px;
+            margin:  0 auto;
+        }
+    </style>
+</head>
+<body>
+<main>
+<input type="submit" value="复位游戏" class="aaa">
+<input type="submit" value="暂停游戏" class="bbb">
+<input type="submit" value="开始游戏" class="ccc">
+</main>
+
+    <div class="box"> <p>1</p>
+    </div>
+</body>
+</html>
+<script>
+    //游戏开始
+    //    let t =setInterval(move,300);
+
+    //构建游戏场景
+let box = document.querySelector(".box");
+    let str = '';
+    for (let i = 0; i<40;i++){
+        for(let j = 0; j <40; j++){
+            str +=`<div id='c${j}-${i}'></div>`;
+        }
+        box.innerHTML=str;
+    }
+//构建游戏元素
+
+    let she = [
+        {x:0,y:0},
+        {x:1,y:0},
+        {x:2,y:0}
+    ]
+//画蛇
+    she.forEach(val=>{
+        var dom = document.querySelector(`#c${val.x}-${val.y}`);
+        dom.classList.add('she');
+    })
+//食物
+    let food =getfood();
+    function getfood() {
+        do{
+        var x=Math.floor(Math.random()*40);
+        var y=Math.floor(Math.random()*40);
+        }
+        while (check(x,y));
+        let fooddom = document.querySelector(`#c${x}-${y}`);
+        fooddom.classList.add('food');
+        return {x: x,y: y};
+
+    }
+    function check(a,b) {
+        return she.some(val=> val.x==a && val.y == b );
+    }
+
+//跑
+    let star = document.querySelector(".aaa");
+    let stops = document.querySelector(".bbb");
+    let gos = document.querySelector(".ccc");
+    star.onclick=function () {
+        history.go(0);
+    }
+    gos.onclick=function () {
+        gos.value="继续游戏";
+    let t =setInterval(move,300);
+        stops.onclick=function () {
+            clearInterval(t);
+        }
+    let way ='right';
+    function move() {
+        let headcoords=she[she.length-1];
+        let newhead;
+        switch (way){
+            case 'right': newhead = {x:headcoords.x+1,y:headcoords.y};break;
+            case 'left': newhead = {x:headcoords.x-1,y:headcoords.y};break;
+            case 'top': newhead = {x:headcoords.x,y:headcoords.y-1};break;
+            case 'bottom': newhead = {x:headcoords.x,y:headcoords.y+1};break;
+        }
+
+
+        let newheaddom = document.querySelector(`#c${newhead.x}-${newhead.y}`);
+        if(!newheaddom ||check(newhead.x,newhead.y)){
+            clearInterval(t);
+            alert('游戏结束');
+            return;
+        }
+        newheaddom.className='she';
+        she.push(newhead);
+        if(newhead.x == food.x && newhead.y == food.y){
+            food=getfood();
+        }else{
+            let end = she.shift();
+            let enddom = document.querySelector(`#c${end.x}-${end.y}`);
+            enddom.classList.remove('she');
+        }
+    }
+
+
+    //获取键盘事件
+document.body.onkeydown=function (e) {
+    let code = e.which;
+    switch (code){
+        case 37:
+            if(way =="right"){
+                return;
+            }
+             way = 'left';
+        break;
+
+        case 38:if(way =="bottom"){
+            return;
+        }
+            way = 'top';
+            break;
+
+        case 39:if(way =="left"){
+            return;
+        }
+            way = "right";
+            break;
+
+        case 40:if(way =="top"){
+            return;
+        }
+            way = 'bottom';
+            break;
+    }
+}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
