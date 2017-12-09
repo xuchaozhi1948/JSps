@@ -560,6 +560,7 @@ h1,h2{
     font-family: "幼圆";
     /*background: url("../img/") 50% 0 no-repeat;*/
     animation: zoomIn 2s;
+    z-index:999;
 }
 .bgkk1{
     position: absolute;
