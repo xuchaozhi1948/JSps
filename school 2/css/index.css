@@ -783,3 +783,6 @@ h1,h2{
     animation: bounceOutRight 1s;
 
 }
+a{
+    text-decoration:none;
+}
