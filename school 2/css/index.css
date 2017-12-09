@@ -579,6 +579,7 @@ h1,h2{
     background: #FFB400;
     /*background: url("../img/") 50% 0 no-repeat;*/
     animation: zoomOut 2s;
+    z-index:999;
 }
 .active .bgkk2{
     position: absolute;
